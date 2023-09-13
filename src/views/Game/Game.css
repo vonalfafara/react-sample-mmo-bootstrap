@@ -1,0 +1,21 @@
+section#game .banner {
+  height: 400px;
+  overflow: hidden;
+}
+
+section#game .banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+section#game .carousel-item {
+  height: 400px;
+}
+
+section#game .carousel img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,51 @@
+section#news .banner {
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  color: white;
+}
+
+section#news .banner .overlay,
+section#news .news-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+section#news .banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+section#news .news-item {
+  height: 100%;
+  position: relative;
+  color: white;
+}
+
+section#news a {
+  text-decoration: none;
+}
+
+section#news .news-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}

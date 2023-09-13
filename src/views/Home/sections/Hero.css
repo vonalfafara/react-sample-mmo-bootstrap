@@ -1,0 +1,16 @@
+section#hero {
+  height: 500px;
+  background-image: linear-gradient(
+    to right top,
+    #d8cb40,
+    #f6a32e,
+    #ff7444,
+    #ff3f6a,
+    #eb1297
+  );
+  color: white;
+}
+
+section#hero img {
+  height: 500px;
+}
