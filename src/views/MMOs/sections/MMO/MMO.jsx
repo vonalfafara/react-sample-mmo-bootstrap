@@ -18,7 +18,7 @@ const MMO = () => {
   }
 
   return (
-    <section id="mmos" className="mt-4">
+    <section id="mmos" className="my-4">
       <Container>
         <h3 className="text-center">MMO List</h3>
         <Row className="g-4">

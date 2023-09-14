@@ -19,7 +19,7 @@ const Game = () => {
     setIsGameFetched(true);
   }
   return (
-    <section id="game">
+    <section id="game" className="mb-5">
       {isGameFetched ? (
         <>
           <div className="banner">

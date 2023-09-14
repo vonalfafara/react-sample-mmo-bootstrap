@@ -18,7 +18,7 @@ const News = () => {
   }
 
   return (
-    <section id="news">
+    <section id="news" className="mb-4">
       <div className="banner mb-4">
         <img src={dog} />
         <div className="overlay"></div>
