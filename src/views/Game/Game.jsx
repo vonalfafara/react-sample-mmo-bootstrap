@@ -1,30 +1,20 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./Game.css";
 import { Container, Carousel } from "react-bootstrap";
+import http from "../../lib/http";
 
 const Game = () => {
   const [game, setGame] = useState({});
   const [isGameFetched, setIsGameFetched] = useState(false);
   const params = useParams();
-  console.log(params);
 
   useEffect(() => {
     getGame(params.gameId);
   }, []);
 
   async function getGame(id) {
-    const options = {
-      headers: {
-        "X-RapidAPI-Key": "b9f377de43msh10628aacb321df0p1be870jsn29f9c84e4616",
-        "X-RapidAPI-Host": "mmo-games.p.rapidapi.com",
-      },
-    };
-    const { data } = await axios.get(
-      "https://mmo-games.p.rapidapi.com/game?id=" + id,
-      options
-    );
+    const { data } = await http.get(`/game?id=${id}`);
     setGame(data);
     setIsGameFetched(true);
   }

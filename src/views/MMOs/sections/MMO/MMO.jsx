@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import MMOItem from "./MMOItem";
 import "./MMO.css";
-import axios from "axios";
+import http from "../../../../lib/http";
 
 const MMO = () => {
   const [mmos, setMmos] = useState([]);
@@ -13,16 +13,7 @@ const MMO = () => {
   }, []);
 
   async function getMMOs() {
-    const options = {
-      headers: {
-        "X-RapidAPI-Key": "b9f377de43msh10628aacb321df0p1be870jsn29f9c84e4616",
-        "X-RapidAPI-Host": "mmo-games.p.rapidapi.com",
-      },
-    };
-    const { data } = await axios.get(
-      "https://mmo-games.p.rapidapi.com/games",
-      options
-    );
+    const { data } = await http.get("/games");
     setMmos(data);
   }
 

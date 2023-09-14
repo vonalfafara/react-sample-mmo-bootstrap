@@ -1,8 +1,8 @@
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
-import axios from "axios";
 import dog from "../../assets/dog.jpg";
 import "./News.css";
+import http from "../../lib/http";
 
 const News = () => {
   const [articles, setArticles] = useState([]);
@@ -13,17 +13,7 @@ const News = () => {
   }, []);
 
   async function getArticles() {
-    const options = {
-      headers: {
-        "X-RapidAPI-Key": "b9f377de43msh10628aacb321df0p1be870jsn29f9c84e4616",
-        "X-RapidAPI-Host": "mmo-games.p.rapidapi.com",
-      },
-    };
-    const { data } = await axios.get(
-      "https://mmo-games.p.rapidapi.com/latestnews",
-      options
-    );
-    console.log(data);
+    const { data } = await http.get("/latestnews");
     setArticles(data);
   }
 
